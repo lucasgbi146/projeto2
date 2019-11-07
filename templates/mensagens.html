@@ -7,6 +7,13 @@
     <title>minhas mensagens</title>
 </head>
 <body>
+
+    <form method='POST'>
+        {{ form.hidden_tag() }}
+        {{form.mensagem.label}}: {{from.mensagem}}
+        <br>
+        {{form.botao}}
+    </form>
     
 </body>
 </html>
