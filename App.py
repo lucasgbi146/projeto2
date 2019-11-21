@@ -27,11 +27,11 @@ def index():
 def novaMensagem():
 
     form = MensagemForm()
-    
-    msg = Mensagem()
-    msg.mensagem = form.mensagem.data
-    db.session.add(msg)
-    db.session.commit()
+    if form.validate_on_submit():
+        msg = Mensagem()
+        msg.mensagem = form.mensagem.data
+        db.session.add(msg)
+        db.session.commit()
 
     return render_template('mensagens.html', form=form)
 
